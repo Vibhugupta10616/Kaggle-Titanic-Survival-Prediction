@@ -29,7 +29,7 @@ features = passengers[['Sex','Age', 'Firstclass', 'Secondclass','Fare']]
 survived = passengers["Survived"]
 
 # Perform train, test, split
-f_train,f_test,s_train,s_test = train_test_split(features,survived,train_size = 0.8)
+f_train,f_test,s_train,s_test = train_test_split(features,survived,train_size = 0.8,random_state = 6)
 
 # Scale the feature data so it has mean = 0 and standard deviation = 1
 scaler = StandardScaler()
