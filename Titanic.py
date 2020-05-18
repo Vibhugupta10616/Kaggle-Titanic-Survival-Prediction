@@ -67,7 +67,7 @@ sample_passengers = scaler.transform(sample_passengers)
 
 
 print("Welcome to the Titanic Survival Prediction !!")
-print("This model will tel you ehether you woukd have survives on the Titanic by analysing some the inputs you provide")
+print("This model will tell you whether you would have survived on the Titanic by analysing some the inputs you provide")
 Gender = input("Enter your gender (0 for male/ 1 for female) :- ")
 Gender = float(Gender)
 Age = input("Enter your age :- ")
