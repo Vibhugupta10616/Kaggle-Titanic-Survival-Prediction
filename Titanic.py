@@ -68,20 +68,23 @@ sample_passengers = scaler.transform(sample_passengers)
 
 print("Welcome to the Titanic Survival Prediction !!")
 print("This model will tel you ehether you woukd have survives on the Titanic by analysing some the inputs you provide")
-#Name = ("What was your name :- ")
-Gender = input("Enter your gender (male/female) :- ")
+Gender = input("Enter your gender (0 for male/ 1 for female) :- ")
+Gender = float(Gender)
 Age = input("Enter your age :- ")
-First_class= int(input("Did you belong to 1st class (1/0) :- "))
-Second_class= int(input("Did you belong to 2nd class (1/0) :- "))
+Age = float(Age)
+First_class = int(input("Did you belong to 1st class (1/0) :- "))
+First_class = float(First_class)
+Second_class = int(input("Did you belong to 2nd class (1/0) :- "))
+Second_class = float(Second_class)
 Fare = input("What was your voyage fare :- ")
+Fare = float(Fare)
 
-name = np.array([Gender,Age,First_class,Second_class,Fare])
-passenger = sclaer.transform(name)
-
-prediction = model.predict(passenger)
+name = np.array([Gender, Age, First_class, Second_class, Fare])
+sample = np.array([name])
+sample = scaler.transform(sample)
+prediction = model.predict(sample)
 if prediction == 1:
-  print("Yes, you would have survived during the voyage !!")
+    print("Yes, you would have survived during the voyage !!")
 else:
-  print("Sorry, you would have died on the voyage !!")
-  
+    print("Sorry, you would have died on the voyage !!")
 
