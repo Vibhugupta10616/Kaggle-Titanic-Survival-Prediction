@@ -41,19 +41,19 @@ model = LogisticRegression()
 model.fit(f_train,s_train)
 
 # Score the model on the train data
-print(model.score(f_train,s_train))
+#print(model.score(f_train,s_train))
 
 # Score the model on the test data
-print(model.score(f_test,s_test))
+#print(model.score(f_test,s_test))
 
 # Analyze the coefficients
 #print(model.coef_)
-#print(list(zip(['Sex','Age','FirstClass','SecondClass'],model.coef_[0])))
+#print(list(zip(['Sex','Age','FirstClass','SecondClass','Fare'],model.coef_[0])))
 
 # Sample passenger features
-Jack = np.array([0.0,20.0,0.0,0.0,50.0])
-Rose = np.array([1.0,17.0,1.0,0.0,100.0])
-You = np.array([1.0,15.0,0.0,1.0,125.0])
+#Jack = np.array([0.0,20.0,0.0,0.0,50.0])
+#Rose = np.array([1.0,17.0,1.0,0.0,100.0])
+#You = np.array([1.0,15.0,0.0,1.0,125.0])
 
 # Combine passenger arrays
 sample_passengers = np.array([ Jack , Rose, You ])
@@ -62,5 +62,26 @@ sample_passengers = np.array([ Jack , Rose, You ])
 sample_passengers = scaler.transform(sample_passengers)
 
 # Make survival predictions!
-print(model.predict(sample_passengers))
-print(model.predict_proba(sample_passengers))
+#print(model.predict(sample_passengers))
+#print(model.predict_proba(sample_passengers))
+
+
+print("Welcome to the Titanic Survival Prediction !!")
+print("This model will tel you ehether you woukd have survives on the Titanic by analysing some the inputs you provide")
+#Name = ("What was your name :- ")
+Gender = input("Enter your gender (male/female) :- ")
+Age = input("Enter your age :- ")
+First_class= int(input("Did you belong to 1st class (1/0) :- "))
+Second_class= int(input("Did you belong to 2nd class (1/0) :- "))
+Fare = input("What was your voyage fare :- ")
+
+name = np.array([Gender,Age,First_class,Second_class,Fare])
+passenger = sclaer.transform(name)
+
+prediction = model.predict(passenger)
+if prediction == 1:
+  print("Yes, you would have survived during the voyage !!")
+else:
+  print("Sorry, you would have died on the voyage !!")
+  
+
