@@ -75,6 +75,8 @@ First_class = int(input("Did you belong to 1st class (1/0) :- "))
 First_class = float(First_class)
 Second_class = int(input("Did you belong to 2nd class (1/0) :- "))
 Second_class = float(Second_class)
+if First_class == 1 and Second_class == 1:
+    print("Sorry this is not possible")
 Fare = input("What was your voyage fare :- ")
 Fare = float(Fare)
 
