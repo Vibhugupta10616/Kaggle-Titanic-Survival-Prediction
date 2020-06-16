@@ -55,10 +55,10 @@ model.fit(f_train,s_train)
 #You = np.array([1.0,15.0,0.0,1.0,125.0])
 
 # Combine passenger arrays
-sample_passengers = np.array([ Jack , Rose, You ])
+#sample_passengers = np.array([ Jack , Rose, You ])
 
 # Scale the sample passenger features
-sample_passengers = scaler.transform(sample_passengers)
+#sample_passengers = scaler.transform(sample_passengers)
 
 # Make survival predictions!
 #print(model.predict(sample_passengers))
